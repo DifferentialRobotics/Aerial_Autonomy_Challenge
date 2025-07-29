@@ -7,6 +7,14 @@
 > NVIDIA RTX4060
 > INTEL I7
 
+## Download Simulator and Demo Code
+#### Download Demo Code
+>+ git clone https://github.com/DifferentialRobotics/Aerial_Autonomy_Challenge.git
+#### Download Simulator
+Please refer to the following files:
+[README_Simulator_CN.md](AerialAutonomyChallenge-Simulator/README_Simulator_CN.md) OR [README_Simulator.md](AerialAutonomyChallenge-Simulator/README_Simulator.md)
+
+
 ## Quick Start
 #### Build and Launch Simulator-bridge
 >+ `cd /path/to/AerialAutonomyChallenge-Simulator-bridge`  
@@ -43,13 +51,10 @@ Wind field strength is configurable in：'[run_in_sim.xml](AerialAutonomyChallen
 
 
 ## Acknowledgements & License
-This project includes selected packages from the [MARSIM repository](https://github.com/hku-mars/MARSIM),
-developed by the MARS team at The University of Hong Kong.
-We sincerely thank them for their open-source contribution.
+During the development of this project, we referenced and utilized several open-source packages from [EGO-Planner-v2](https://github.com/hku-mars/MARSIM) and [MARSIM](https://github.com/hku-mars/MARSIM).  
+We would like to express our sincere gratitude to the **FAST-Lab at Zhejiang University** and the **MARS team at The University of Hong Kong** for their valuable open-source contributions.
 
-All reused code complies with the original MARSIM open-source license.
-Users must adhere to the original license terms when using this project.
-
+All related code is strictly used in compliance with the original project's open-source license agreements. When utilizing this project, users must adhere to the terms of the respective licenses.
 
 ## Q&A
 

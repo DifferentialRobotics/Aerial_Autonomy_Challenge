@@ -8,6 +8,13 @@
 > NVIDIA RTX4060
 > INTEL I7
 
+## 下载仿真器与示例代码
+#### 示例代码下载
+>+ git clone https://github.com/DifferentialRobotics/Aerial_Autonomy_Challenge.git
+#### 仿真器下载
+参考以下文件
+[README_Simulator_CN.md](AerialAutonomyChallenge-Simulator/README_Simulator_CN.md) 或者 [README_Simulator.md](AerialAutonomyChallenge-Simulator/README_Simulator.md)
+
 ## 快速启动
 #### 编译并启动Simulator-bridge
 >+ `cd /path/to/AerialAutonomyChallenge-Simulator-bridge`  
@@ -45,10 +52,9 @@
 
 ## 致谢与声明
 
-本项目部分功能包引用自 [MARSIM 仓库](https://github.com/hku-mars/MARSIM)，
-由香港大学 MARS 团队开发，特此感谢其开源贡献。
+本项目在开发过程中参考并使用了 [EGO-Planner-v2](https://github.com/hku-mars/MARSIM) 以及 [MARSIM](https://github.com/hku-mars/MARSIM)项目中的部分开源功能包，特此感谢浙江大学 FAST-Lab 团队 与 香港大学 MARS 团队的开源贡献。
 
-相关代码严格遵循 MARSIM 的开源许可协议使用，用户在使用时请遵守原项目的许可证条款。
+相关代码均严格遵循原项目的开源许可协议使用，用户在使用本项目时，请务必遵守相应的许可证条款。
 
 
 ## Q&A
