@@ -10,7 +10,7 @@
 ## Download Simulator and Demo Code
 #### Download Demo Code
 >+ git clone https://github.com/DifferentialRobotics/Aerial_Autonomy_Challenge.git
-#### Download Simulator
+#### Download Simulator（Please download the latest version）
 Please refer to the following files:
 [README_Simulator_CN.md](AerialAutonomyChallenge-Simulator/README_Simulator_CN.md) OR [README_Simulator.md](AerialAutonomyChallenge-Simulator/README_Simulator.md)
 
@@ -37,10 +37,12 @@ Please refer to the following files:
 >+ Left mouse button controls camera pitch, right button controls yaw; both buttons can be held together
 >+ Hold and drag the middle mouse button to move the camera similarly to W/A/S/D
 >+ Current movement speeds in simulator: 0.35 m/s, 0.35 m/s, 0.2 m/s
-
+>+ Press the Esc key to show the mouse cursor.While the mouse is visible, press the Windows key to right-click the simulator icon and close the simulator directly.
 ## ROS Topic Interaction
 #### Published Topics:  
 >+ /drone_0_pcl_render_node/cloud
+>+ /image/compressed
+
 #### Subscribed Topics:  
 >+ /quad_0/lidar_slam/odom
 

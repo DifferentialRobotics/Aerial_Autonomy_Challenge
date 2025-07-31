@@ -3,3 +3,12 @@
 build
 devel
 .catkin_workspace
+AerialAutonomyChallenge-Demo-EgoPlannerv2/src/planner/cascadePID/data
+AerialAutonomyChallenge-Simulator_Data/
+AerialAutonomyChallenge-Simulator/UnityPlayer.so
+AerialAutonomyChallenge-Simulator/libdecor-cairo.so
+AerialAutonomyChallenge-Simulator/libdecor-0.so.0
+AerialAutonomyChallenge-Simulator/AerialAutonomyChallenge-Simulator.x86_64
+UAV_sample_sim_BurstDebugInformation_DoNotShip/
+.gitignore
+AerialAutonomyChallenge-Simulator/AerialAutonomyChallenge-Simulator_v*

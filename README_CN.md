@@ -11,7 +11,7 @@
 ## 下载仿真器与示例代码
 #### 示例代码下载
 >+ git clone https://github.com/DifferentialRobotics/Aerial_Autonomy_Challenge.git
-#### 仿真器下载
+#### 仿真器下载(请下载最新版本)
 参考以下文件
 [README_Simulator_CN.md](AerialAutonomyChallenge-Simulator/README_Simulator_CN.md) 或者 [README_Simulator.md](AerialAutonomyChallenge-Simulator/README_Simulator.md)
 
@@ -37,10 +37,12 @@
 >+ 按下鼠标左键控制摄像头PITCH，右键控制摄像头YAW，左右按键可同时按下
 >+ 按下鼠标中键并拖动鼠标可实现W/A/S/D一样的移动效果
 >+ 目前仿真器移动速度分别为：0.35m/s、0.35m/s、0.2m/s
+>+ 按下键盘Esc可显示鼠标，显示鼠标状态下点击WIN键可直接右键仿真器图标关闭仿真器
 
 ## 仿真器ROS话题交互
 #### 发布的话题：  
 >+ /drone_0_pcl_render_node/cloud
+>+ /image/compressed
 #### 订阅的话题：  
 >+ /quad_0/lidar_slam/odom
 
