@@ -28,6 +28,13 @@ Official Discord Channel: https://discord.gg/spgGRz3w
 
 The simulator also offers interfaces for radar point clouds, first-person views from the aerial vehicle, and more. It is expected to serve as the platform for the **Aerial Autonomy Challenge** preliminary rounds in the future.
 
+### Latest Version: V1.2
+>+ Updated UI interaction methods
+>+ Added flight time calculation (from the first frame until returning to the takeoff zone)
+>+ Added obstacle speed adjustment slider
+>+ Added area arrival detection
+>+ Added obstacle collision detection (full score 100 points, deduct 1 point for every 0.01 seconds of contact)
+
 
 ## Official Test Environment
 > ros-noetic  
@@ -61,11 +68,10 @@ Please refer to the following files:
 >+ `roslaunch ego_planner single_drone_interactive.launch`
 
 ## UI Interaction
->+ Use W/A/S/D to move the camera horizontally
->+ Left mouse button controls camera pitch, right button controls yaw; both buttons can be held together
->+ Hold and drag the middle mouse button to move the camera similarly to W/A/S/D
->+ Current movement speeds in simulator: 0.35 m/s, 0.35 m/s, 0.2 m/s
->+ Press the Esc key to show the mouse cursor. In mouse-visible mode, press the Win key to right-click the simulator icon and close the simulator (or use Alt + F4 to close the simulator directly).
+>+ Left mouse button controls camera rotation.
+>+ right mouse button controls camera panning.
+>+ pressing the spacebar will automatically adjust the view to a top-down perspective of the drone.
+>+ Use Alt+F4 to directly close the simulator.
 
 ## ROS Topic Interaction
 #### Published Topics:  
