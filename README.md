@@ -28,7 +28,7 @@ Official Discord Channel: https://discord.gg/spgGRz3w
 
 The simulator also offers interfaces for radar point clouds, first-person views from the aerial vehicle, and more. It is expected to serve as the platform for the **Aerial Autonomy Challenge** preliminary rounds in the future.
 
-### Latest Version: V1.2
+### Latest Version: V1.3
 >+ Updated UI interaction methods
 >+ Added flight time calculation (from the first frame until returning to the takeoff zone)
 >+ Added obstacle speed adjustment slider
@@ -71,7 +71,7 @@ Please refer to the following files:
 >+ Left mouse button controls camera rotation.
 >+ right mouse button controls camera panning.
 >+ pressing the spacebar will automatically adjust the view to a top-down perspective of the drone.
->+ Use Alt+F4 to directly close the simulator.
+>+ The 'Quit' button in the top-right corner can directly close the simulator.
 
 ## ROS Topic Interaction
 #### Published Topics:  
