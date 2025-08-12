@@ -29,12 +29,7 @@ Official Discord Channel: https://discord.gg/spgGRz3w
 The simulator also offers interfaces for radar point clouds, first-person views from the aerial vehicle, and more. It is expected to serve as the platform for the **Aerial Autonomy Challenge** preliminary rounds in the future.
 
 ### Latest Version: V1.3
->+ Updated UI interaction methods
->+ Added flight time calculation (from the first frame until returning to the takeoff zone)
->+ Added obstacle speed adjustment slider
->+ Added area arrival detection
->+ Added obstacle collision detection (full score 100 points, deduct 1 point for every 0.01 seconds of contact)
-
+>+ The simulator exit method was changed from the Alt+F4 shortcut to clicking the Quit button.
 
 ## Official Test Environment
 > ros-noetic  
