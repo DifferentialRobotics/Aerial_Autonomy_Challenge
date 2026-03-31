@@ -12,7 +12,7 @@
 >+ git clone https://github.com/DifferentialRobotics/Aerial_Autonomy_Challenge.git
 #### 仿真器下载
 >+ https://pan.baidu.com/s/1rCioYJQSKhKqadkiC0CGdA?pwd=hs5p 
-解压到Diff-Planner/src
+解压到Aerial_Autonomy_Challenge/src
 ## 快速启动
 #### 编译并启动
 >+ `cd Aerial_Autonomy_Challenge`  
