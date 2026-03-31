@@ -21,8 +21,6 @@
 >+ `chmod +x src/AerialAutonomyChallenge-Simulator/AerialAutonomyChallenge-Simulator.x86_64`  
 >+ `./sh_files/run_unity.sh`
 
-![快速启动](images/启动运行1.gif)
-
 ## 仿真器界面交互  
 >+ 鼠标左键控制镜头旋转
 >+ 鼠标右键控制镜头平移
