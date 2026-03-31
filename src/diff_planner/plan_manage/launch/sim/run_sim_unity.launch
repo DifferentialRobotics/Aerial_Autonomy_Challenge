@@ -1,0 +1,79 @@
+<launch>
+    <!-- 地图尺寸 -->
+    <arg name="map_size_x" value="240.0"/>
+    <arg name="map_size_y" value="240.0"/>
+    <arg name="map_size_z" value="2.0"/>
+
+    <!-- 里程计话题 -->
+    <arg name="odom_topic" value="quad_0/lidar_slam/odom"/>
+
+    <!-- 无人机初始位置 -->
+    <arg name="drone_id" value="0"/>
+    <arg name="init_x"   value="0.0"/>
+    <arg name="init_y"   value="0.0"/>
+    <arg name="init_z"   value="1.0"/>
+
+
+    <include file="$(find diff_planner)/launch/include/run_in_sim.xml">
+        <arg name="drone_id"    value="$(arg drone_id)"/>
+        <arg name="init_x"      value="$(arg init_x)"/>
+        <arg name="init_y"      value="$(arg init_y)"/>
+        <arg name="init_z"      value="$(arg init_z)"/>
+        <arg name="map_size_x"  value="$(arg map_size_x)"/>
+        <arg name="map_size_y"  value="$(arg map_size_y)"/>
+        <arg name="map_size_z"  value="$(arg map_size_z)"/>
+        <arg name="odom_topic"  value="$(arg odom_topic)"/>
+        <arg name="flight_type" value="1"/>
+    </include>
+
+    <!-- 四旋翼动力学仿真节点 -->
+    <node pkg="mars_drone_sim" name="quad$(arg drone_id)_quadrotor_dynamics"
+          type="quadrotor_dynamics_node" output="screen">
+        <remap from="~odom"    to="/quad_0/lidar_slam/odom"/>
+        <remap from="~cmd_RPM" to="/quad_$(arg drone_id)/cmdRPM"/>
+        <remap from="~imu"     to="/quad_$(arg drone_id)/imu"/>
+        <param name="mass"            value="1.9"/>
+        <param name="simulation_rate" value="200"/>
+        <param name="quadrotor_name"  value="quad_$(arg drone_id)"/>
+        <!-- 风区设置 -->
+        <param name="wind_effect/active" value="true"/>
+        <param name="wind_effect/min_x"  value="5.64"/>
+        <param name="wind_effect/min_y"  value="-2.88"/>
+        <param name="wind_effect/min_z"  value="0.0"/>
+        <param name="wind_effect/max_x"  value="11.68.0"/>
+        <param name="wind_effect/max_y"  value="-4.14"/>
+        <param name="wind_effect/max_z"  value="2.0"/>
+        <!-- 风力强度 -->
+        <param name="wind_effect/strength"  value="2.0"/>
+        <!-- 风力中心点 -->
+        <param name="wind_effect/center_x"  value="11.1"/>
+        <param name="wind_effect/center_y"  value="3.35"/>
+        <param name="wind_effect/center_z"  value="1.0"/>
+        <!-- 初始位置 -->
+        <param name="init_state_x" value="$(arg init_x)"/>
+        <param name="init_state_y" value="$(arg init_y)"/>
+        <param name="init_state_z" value="$(arg init_z)"/>
+    </node>
+
+    <!-- 级联PID控制器节点 -->
+    <node pkg="cascadePID" name="quad$(arg drone_id)_cascadePID_node"
+          type="cascadePID_node">
+        <param name="drone_id"       value="$(arg drone_id)"/>
+        <remap from="~odom"          to="/quad_0/lidar_slam/odom"/>
+        <remap from="~cmd_RPM"       to="/quad_$(arg drone_id)/cmdRPM"/>
+        <remap from="~cmd_pose"      to="/quad_$(arg drone_id)/pos_cmd"/>
+        <remap from="~position_cmd"  to="/drone_0_planning/pos_cmd"/>
+        <param name="controller_rate"   value="200"/>
+        <param name="quadrotor_name"    value="quad_$(arg drone_id)"/>
+        <param name="init_state_x"      value="$(arg init_x)"/>
+        <param name="init_state_y"      value="$(arg init_y)"/>
+        <param name="init_state_z"      value="$(arg init_z)"/>
+        <param name="init_state_yaw"    value="0"/>
+        <param name="angle_stable_time" value="0.5"/>
+        <param name="damping_ratio"     value="1.0"/>
+    </node>
+
+    <!--<node name="rviz" pkg="rviz" type="rviz"
+          args="-d $(find diff_planner)/launch/include/sim.rviz" required="true"/>-->
+
+</launch>

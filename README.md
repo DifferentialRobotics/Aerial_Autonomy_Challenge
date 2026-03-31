@@ -1,97 +1,68 @@
-# 2025 Aerial Autonomy Challenge 
-# 2025 IROS COMPETITION
+## 关于仿真器
+本仿真器为**2026中国高校智能机器人创意大赛-空中具身智能挑战赛**官方提供的仿真环境，旨在为参赛队伍提供一个高保真、易用的测试平台，以便在赛前进行算法验证和场地模拟测试。该仿真器基于unity开发，复现了挑战赛中的典型环境，包括结构化障碍物区、密集树林、动态障碍、狭窄缝隙等复杂场景，帮助参赛队伍更好地适应比赛环境。同时，仿真器集成了[Diff-Planner](https://github.com/DifferentialRobotics/Diff-Planner)规划算法。
 
-
-## Overview
-
-IROS 2025 will be held from **October 19 to 25** in **Hangzhou, China**, bringing together thousands of leading scholars, technology experts, and industry leaders from around the world to witness the latest innovations in robotics and explore the future of the industry.
-
-Differential Robotics is organizing the **Aerial Autonomy Challenge** as part of the IROS 2025 competition track. The challenge aims to evaluate the autonomous navigation capabilities of aerial robots in unknown and complex environments, including structured maps, dynamic obstacles, simulated forests, wind disturbances, and narrow gaps.
-
-## Challenge Objectives
-
-The **Aerial Autonomy Challenge** comprises five designed scenarios aimed at systematically evaluating the capabilities of autonomous aerial robots in dynamic environments. The tasks focus on key aspects such as localization, perception, decision-making, planning, and control. By closely emulating real-world operational demands, the challenge serves as a rigorous benchmark and a technology validation platform for advancing the deployment of aerial robotics in multi-scenario, cross-domain applications.
-
-<p align="center">
-  <img src="image/image_1.jpg" alt="alt text" width="350" />
-</p>
-
-
-The competition is now open for registration! We sincerely invite researchers and engineering practitioners from around the world to join us in this exciting competition, to drive breakthroughs in aerial robotics and accelerate the evolution of autonomous aerial systems!
-
-Competition Official Web: https://www.nspacerobot.com/iroschallenge/  
-Official Discord Channel: https://discord.gg/spgGRz3w
-
-## About the Simulator
-
-**Differential Robotics** provides the official simulator for this competition, which is used for algorithm validation and venue simulation testing before the event. The simulator accurately reproduces typical environments found in the Aerial Autonomy Challenge, including forests, dynamic obstacles, wind disturbances, narrow gaps, and other complex scenarios.
-
-The simulator also offers interfaces for radar point clouds, first-person views from the aerial vehicle, and more. It is expected to serve as the platform for the **Aerial Autonomy Challenge** preliminary rounds in the future.
-
-### Latest Version: V1.3
->+ The simulator exit method was changed from the Alt+F4 shortcut to clicking the Quit button.
-
-## Official Test Environment
+## 官方测试环境
 > ros-noetic  
 > ubuntu20.04  
 > NVIDIA RTX4060
 > INTEL I7
 
-## Download Simulator and Demo Code
-#### Download Demo Code
+## 下载仿真器与示例代码
+#### 示例代码下载
 >+ git clone https://github.com/DifferentialRobotics/Aerial_Autonomy_Challenge.git
-#### Download Simulator（Please download the latest version）
-Please refer to the following files:
-[README_Simulator_CN.md](AerialAutonomyChallenge-Simulator/README_Simulator_CN.md) OR [README_Simulator.md](AerialAutonomyChallenge-Simulator/README_Simulator.md)
+#### 仿真器下载
+>+ https://pan.baidu.com/s/1rCioYJQSKhKqadkiC0CGdA?pwd=hs5p 
+解压到Diff-Planner/src
+## 快速启动
+#### 编译并启动
+>+ `cd Aerial_Autonomy_Challenge`  
+>+ `git checkout 2026robotics`
+>+ `catkin_make -j1`
+>+ `cd Aerial_Autonomy_Challenge/sh_files`  
+>+ `./start_all.sh`
 
+![快速启动](images/启动运行1.gif)
 
-## Quick Start
-#### Build and Launch Simulator-bridge
->+ `cd /path/to/AerialAutonomyChallenge-Simulator-bridge`  
->+ `catkin_make`
->+ `source devel/setup.bash`
->+ `roslaunch ros_tcp_endpoint endpoint.launch`
+## 仿真器界面交互  
+>+ 鼠标左键控制镜头旋转
+>+ 鼠标右键控制镜头平移
 
-#### Launch Simulator
->+ `cd /path/to/AerialAutonomyChallenge-Simulator`  
->+ Double-click`AerialAutonomyChallenge-Simulator.x86_64`inside the simulator folder
+![调整视角](images/视角调整.gif)
+>+ 单击空格画面会自动调整至俯视无人机
+>+ 使用右上角的'Quit'按键可直接关闭仿真器
+>+ 鼠标左键点击并拖拽即可实时改变物体位置
+>+ 对准不再需要的障碍物连续双击，即可将其从场景中瞬间移除。
+>+ 点击界面右上角 Add Cube 按钮，系统会随机生成新的可移动障碍物，快速增加环境复杂度。
 
-#### Build and Launch Demo Code
->+ `cd /path/to/AerialAutonomyChallenge-Demo-EgoPlannerv2`  
->+ `catkin_make`
->+ `source devel/setup.bash`
->+ `roslaunch ego_planner single_drone_interactive.launch`
+![物块](images/删除移动增加物块.gif)
+>+ 通过界面右下角的滑动条，用户可实时调节移动障碍物的速度，测试无人机在极端动态环境下的反应时间。
 
-## UI Interaction
->+ Left mouse button controls camera rotation.
->+ right mouse button controls camera panning.
->+ pressing the spacebar will automatically adjust the view to a top-down perspective of the drone.
->+ The 'Quit' button in the top-right corner can directly close the simulator.
+![物块](images/改变移动障碍物速度.gif)
+>+ 点击 Target the ring 后, 系统会自动将所有环按顺序发送给后台规划算法
 
-## ROS Topic Interaction
-#### Published Topics:  
+![物块](images/移动到环.gif)
+>+ 点击 Add Position 生成球型目标点。
+>+ 拖动球体到预设位置。你可以根据需求添加多个航点，构建复杂的飞行路径。
+>+ 点击 Target the point 后，系统会自动将所有点位按顺序发送给后台规划算法，无人机将立即启动并按预设轨迹自动飞行。
+
+![物块](images/增加点并移动到点.gif)
+## 仿真器ROS话题交互
+#### 发布的话题：  
 >+ /drone_0_pcl_render_node/cloud
->+ /image/compressed
-
-#### Subscribed Topics:  
+#### 订阅的话题：  
 >+ /quad_0/lidar_slam/odom
 
-## Scenario Parameter Configuration 
-Wind field strength is configurable in：'[run_in_sim.xml](AerialAutonomyChallenge-Demo-EgoPlannerv2/src/planner/plan_manage/launch/include/run_in_sim.xml)'
-#### Current Wind Strength: Level 3
->+ param name="wind_effect/strength" value="3.0"
 
+## 致谢与声明
 
-## Acknowledgements & License
-During the development of this project, we referenced and utilized several open-source packages from [EGO-Planner-v2](https://github.com/hku-mars/MARSIM) and [MARSIM](https://github.com/hku-mars/MARSIM).  
-We would like to express our sincere gratitude to the **FAST-Lab at Zhejiang University** and the **MARS team at The University of Hong Kong** for their valuable open-source contributions.
+本项目在开发过程中参考并使用了[MARSIM](https://github.com/hku-mars/MARSIM)项目中的部分开源功能包，特此感谢香港大学 MARS 团队的开源贡献。
 
-All related code is strictly used in compliance with the original project's open-source license agreements. When utilizing this project, users must adhere to the terms of the respective licenses.
+相关代码均严格遵循原项目的开源许可协议使用，用户在使用本项目时，请务必遵守相应的许可证条款。
+
 
 ## Q&A
 
-Please feel free to submit issues or start discussions.
-We will respond as soon as possible after reviewing them.
+请随时提交问题或讨论,我们会在看到问题后尽快回复
 
 
 
