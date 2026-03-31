@@ -86,7 +86,7 @@
         <param name="grid_map/local_map_margin" value="10"/>
         <param name="grid_map/enable_virtual_wall" value="true"/>
         <param name="grid_map/virtual_ceil" value="2.0"/>
-        <param name="grid_map/virtual_ground" value="-0.5"/>
+        <param name="grid_map/virtual_ground" value="-0.0"/>
         <param name="grid_map/ground_height" value="-0.01"/>
         <!-- camera parameter -->
         <param name="grid_map/cx" value="$(arg cx)"/>

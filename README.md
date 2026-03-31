@@ -18,8 +18,8 @@
 >+ `cd Aerial_Autonomy_Challenge`  
 >+ `git checkout 2026robotics`
 >+ `catkin_make -j1`
->+ `cd Aerial_Autonomy_Challenge/sh_files`  
->+ `./start_all.sh`
+>+ `chmod +x src/AerialAutonomyChallenge-Simulator/AerialAutonomyChallenge-Simulator.x86_64`  
+>+ `./sh_files/run_unity.sh`
 
 ![快速启动](images/启动运行1.gif)
 
